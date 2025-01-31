@@ -4,11 +4,11 @@
 }
 
 .pokemonBg {
-  background-image: url(../images/ceriien-arts-sleeper-suicunelayoutpng-wmrk.jpg);
+  background-image: url(../images/background-arena.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: auto;
+  min-height: 100vh;
   margin: 0;
 }
 .searchText {

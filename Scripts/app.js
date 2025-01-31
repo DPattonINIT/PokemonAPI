@@ -85,6 +85,15 @@ searchBTN.addEventListener("click", () => {
   }
 });
 
+
+searchBar.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && searchBar.value.trim()) {
+      GetPokemon(searchBar.value.trim());
+    } else if (event.key === "Enter") {
+      alert("Please enter a Pokémon name or Pokédex number.");
+    }
+  });
+
 // Local Storage section for favorites
 function saveToLocalStorage(pokemon) {
   let pokemonArr = getFromLocalStorage();
@@ -94,24 +103,24 @@ function saveToLocalStorage(pokemon) {
   }
   if (pokemon && !pokemonArr.includes(pokemon)) {
     pokemonArr.push(pokemon);
-    localStorage.setItem("name", JSON.stringify(pokemonArr));
+    localStorage.setItem("pokemonFavorites", JSON.stringify(pokemonArr));
   }
 }
 
 function getFromLocalStorage() {
-  let saveToLocalStorageData = localStorage.getItem("name");
+  let saveToLocalStorageData = localStorage.getItem("pokemonFavorites");
   if (saveToLocalStorageData == null) {
     return [];
   }
   return JSON.parse(saveToLocalStorageData);
 }
 
-function removeFromLocalStorage(name) {
+function removeFromLocalStorage(pokemonFavorites) {
   let localStorageData = getFromLocalStorage();
-  let nameIndex = localStorageData.indexOf(name);
+  let pokemonIndex = localStorageData.indexOf(pokemonFavorites);
 
-  localStorageData.splice(nameIndex, 1);
-  localStorage.setItem("name", JSON.stringify(localStorageData));
+  localStorageData.splice(pokemonIndex, 1);
+  localStorage.setItem("pokemonFavorites", JSON.stringify(localStorageData));
 }
 
 function createElement() {
