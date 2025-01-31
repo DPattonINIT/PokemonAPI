@@ -12,8 +12,9 @@ const locationText = document.getElementById("locationText");
 const evolutionText = document.getElementById("evolutionText");
 const favoritesList = document.getElementById("favoritesList");
 let currentPokemonName = "";
+let isShiny = false;
 
-// Function to fetch the pokemon API
+
 const GetPokemon = async (userSearch) => {
   try {
     // This  code Check if the search is within the range
@@ -44,8 +45,7 @@ const GetPokemon = async (userSearch) => {
     const forwardEvolution = getEvolutionChain(evolutionData.chain);
 
     evolutionText.innerText = `${forwardEvolution.join(" -> ")}`;
-
-    pokemonImg.src = data.sprites.front_default;
+    pokemonImg.src = isShiny ? data.sprites.front_shiny : data.sprites.front_default;
     pokemonName.innerText = data.name;
     pokemonType.innerText = data.types.map((type) => type.type.name).join(", ");
     abilitiesText.innerText = data.abilities
@@ -170,3 +170,11 @@ randomBTN.addEventListener("click", () => {
 window.onload = () => {
   createElement();
 };
+
+// Eventlistner for the shiny button
+shinyBTN.addEventListener("click", () => {
+    isShiny = !isShiny; 
+    if (currentPokemonName) {
+      GetPokemon(currentPokemonName);  
+    }
+  });
