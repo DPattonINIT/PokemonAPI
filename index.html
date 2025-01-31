@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Styles/styles.css">
+    <link rel="stylesheet" href="./Styles/wickedcss.min.css">
+    <link rel="stylesheet" href="./src/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.css" rel="stylesheet" />
+
+    <title>PokemonIndex</title>
+</head>
+
+<body class="pokemonBg fadeIn">
+    <br>
+    <div class="searchBarContainer">
+        <input id="searchBar" type="text" placeholder="search">
+        <div id="searchBTN" class="searchButton flex justify-center items-center">
+            <h3 class="searchText">Find</h3>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    
+
+    <section class="pokemonContainer gap-4 flex  flex-wrap justify-evenly  ">
+        <div class="cardContainer">
+            <br>
+            <div class="topCard grid grid-cols-1 items-center">
+                <img id="pokemonImg" class="pulse" src="" alt="">
+                <h2 id="pokemonName" class="pokemonNameText text-center">--</h2>
+            </div>
+            <div class="infoBox">
+                <img id="shinyBTN" class="cameraImg" src="./images/lightening.png" alt="image of camera">
+                <img id="randomBTN" class="diceImg" src="./images/dice.png" alt="image of dice">
+                <img id="favoritesBTN" class="starImg" src="./images/star (2).png" alt="image of star">
+            </div>
+            <div class="bottomCard">
+                <h1 class="typeText text-center">Type:</h1>
+                <h1 id="pokemonType" class="typeText text-center"></h1>
+            </div>
+        </div>
+        </div>
+        <div class="miscContainer">
+            <div class="abilitiesContainer text-center">
+                <h1 class="abilitiesTxt text-center">Abilities:</h1>
+                <h2 id="abilitiesText">
+                </h2>
+            </div>
+            <div class="movesContainer text-center">
+                <h1 class="movesTxt text-center">Moves:</h1>
+                <h2 id="movesText"></h2>
+            </div>
+            <div class="locationContainer text-center">
+                <h1 class="movesTxt text-center">Location:</h1>
+                <h2 id="locationText"></h2>
+            </div>
+            <div class="evolutionContainer text-center">
+                <h1 class="evolutionTxt text-center">Evolution Path:</h1>
+                <h2 id="evolutionText"></h2>
+            </div>
+        </div>
+
+        <div class="favoritesContainer">
+            <br>
+            <div class="favoritesBox">
+                <br>
+                <h1 class="favHeader text-center">Favorites</h1>
+                <br>
+                <div id="favoritesList">
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+<script type="module" src="./Scripts/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.js"></script>
+</body>
+
+</html>
