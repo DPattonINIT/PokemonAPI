@@ -60,7 +60,7 @@ const GetPokemon = async (userSearch) => {
   }
 };
 
-// My code to extact evolution chain
+// code to extact evolution chain
 const getEvolutionChain = (chain) => {
   let evolutionArray = [chain.species.name];
 
@@ -75,7 +75,7 @@ const getEvolutionChain = (chain) => {
   return evolutionArray;
 };
 
-// Search Button Code, prevents user from searching blank field
+// Search Button Code
 searchBTN.addEventListener("click", () => {
   const userSearch = searchBar.value.trim();
   if (userSearch) {
@@ -140,7 +140,7 @@ function createElement() {
     removeBtn.type = "button";
     removeBtn.className = "removal";
 
-    // Implements the "delete" icon for the remove button
+    // "delete" icon for the remove button
     let removeIcon = document.createElement("img");
     removeIcon.src = "./images/remove.png";
     removeIcon.alt = "Remove";
@@ -169,13 +169,13 @@ favoritesBTN.addEventListener("click", function () {
   }
 });
 
-//   Adds click event to the random button, and generates pokemon from 1-251
+//   Add click event to the random button
 randomBTN.addEventListener("click", () => {
   const randomId = Math.floor(Math.random() * 251) + 1;
   GetPokemon(randomId);
 });
 
-// This loads my favorites list
+//  loads my favorites list
 window.onload = () => {
   createElement();
 };
